@@ -17,10 +17,11 @@ export default function BidsCard({ name, items, bgImage, avatarImg, avatarName, 
                 width: 300,
                 position: "relative",
                 borderRadius: "18px",
-                border: "2px solid #E7E6EB"
+                border: "2px solid #E7E6EB",
+                cursor:"pointer"
             }}
             key={idKey}
-            onClick={() => dispatch(setData(data))}
+                        onClick={() => dispatch(setData(data))}
         >
             <CardMedia
                 sx={{ height: "12rem" }}
