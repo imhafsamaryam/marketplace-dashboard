@@ -7,6 +7,8 @@ import bidsArts from "../data/bidsArts.json"
 import bidsGaming from "../data/bidsGaming.json"
 import bidsAvatar from "../data/bidsAvatar.json"
 import bidsMemes from "../data/bidsMemes.json"
+import { useDispatch, useSelector } from 'react-redux'
+import { setSelectedCategory } from '../slices/categorySlice'
 
 
 const bidsArray = ["Sports", "Arts", "Gaming", "Avatar", "Memes"]
@@ -15,7 +17,8 @@ const bidsArray = ["Sports", "Arts", "Gaming", "Avatar", "Memes"]
 const HotBids = () => {
 
 
-    const [active, setActive] = useState(localStorage.getItem("bidButton"))
+    const active = useSelector((state) => state.category.selectedCategory)
+    const dispatch = useDispatch()
 
     return (
         <Box
@@ -54,8 +57,7 @@ const HotBids = () => {
                                 text={item}
                                 color={active === item ? "primary" : "secondary"}
                                 handleActive={() => {
-                                    localStorage.setItem("bidButton", item)
-                                    setActive(item)
+                                    dispatch(setSelectedCategory(item))
                                 }}
                                 elevation={active === item ? false : true}
                             />
@@ -78,6 +80,7 @@ const HotBids = () => {
                 >
                     {bidsSports.map((data, idx) => {
                         return <BidsCard
+                            data={data}
                             idKey={idx}
                             name={data.name}
                             avatarName={data.avatarName}
@@ -104,6 +107,7 @@ const HotBids = () => {
                 >
                     {bidsArts.map((data, idx) => {
                         return <BidsCard
+                            data={data}
                             idKey={idx}
                             name={data.name}
                             avatarName={data.avatarName}
@@ -126,6 +130,7 @@ const HotBids = () => {
                 >
                     {bidsGaming.map((data, idx) => {
                         return <BidsCard
+                            data={data}
                             idKey={idx}
                             name={data.name}
                             avatarName={data.avatarName}
@@ -148,6 +153,7 @@ const HotBids = () => {
                 >
                     {bidsAvatar.map((data, idx) => {
                         return <BidsCard
+                            data={data}
                             idKey={idx}
                             name={data.name}
                             avatarName={data.avatarName}
@@ -170,6 +176,7 @@ const HotBids = () => {
                 >
                     {bidsMemes.map((data, idx) => {
                         return <BidsCard
+                            data={data}
                             idKey={idx}
                             name={data.name}
                             avatarName={data.avatarName}

@@ -31,7 +31,12 @@ const Menu = ({ handleFn, value }) => {
             sx={{
                 width: "6.2vw",
                 bgcolor: "#EAECF5",
-                paddingY: "4rem"
+                paddingY: "4rem",
+                position:"fixed",
+                top:0,
+                left:0,
+                height:"100vh"
+
             }}
 
         >

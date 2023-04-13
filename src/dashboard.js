@@ -18,18 +18,22 @@ export default function Dashboard() {
         <Box
             sx={{
                 display: "flex",
-                flexDirection:"row",
-                width:"100%"
+                flexDirection: "row",
+                width: "100%"
             }}
         >
             <Menu value={value} handleFn={handleChange} />
 
-            {
-                value === 1 ?
-                    <DashboardComp />
-                    :
-                    <ComingSoon />
-            }
+            <Box
+                sx={{ marginLeft: "6.2vw" }}
+            >
+                {
+                    value === 1 ?
+                        <DashboardComp />
+                        :
+                        <ComingSoon />
+                }
+            </Box>
         </Box>
     );
 }

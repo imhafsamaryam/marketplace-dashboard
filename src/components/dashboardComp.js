@@ -7,25 +7,27 @@ import HotCollections from './hotCollections'
 import HeroSection from './heroSection'
 import SingleBid from './singleBid'
 import CustomSelect from './customSelect'
+import { useDispatch, useSelector } from 'react-redux'
+import { setName, setProfileImg } from '../slices/profileSlice'
 
 const options = [
-    { label: 'Zacker', value: 'zacker' },
-    { label: 'Richard', value: 'richard' },
-    { label: 'Charles Will', value: 'charleswill' },
+    { label: 'Zacker', value: 'Zacker' },
+    { label: 'Richard', value: 'Richard' },
+    { label: 'Charles Will', value: 'Charles Will' },
 ];
 
 
 
 const DashboardComp = () => {
 
-
-    const [selectedOption, setSelectedOption] = useState('zacker');
+    const name = useSelector((state) => state.profile.name)
+    const dispatch = useDispatch()
 
     return (
         <Box
             sx={{
                 padding: "1.8rem",
-                width: "93vw"
+                width: "92vw"
             }}
         >
             <Box
@@ -49,10 +51,26 @@ const DashboardComp = () => {
                     <CustomSelect
                         options={options}
                         label="Select an option"
-                        value={selectedOption}
-                        onChange={(e) => setSelectedOption(e.target.value)}
+                        value={name}
+                        onChange={(e) => {
+                            dispatch(setName(e.target.value))
+                            switch (e.target.value) {
+                                case "Zacker":
+                                    dispatch(setProfileImg("/images/avatar2.webp"))
+                                    break;
+                                case "Richard":
+                                    dispatch(setProfileImg("/images/avatar3.webp"))
+                                    break;
+                                case "Charles Will":
+                                    dispatch(setProfileImg("/images/avatar4.webp"))
+                                    break;
+
+                                default:
+                                    break;
+                            }
+                        }}
                     />
-                
+
                     <HeroSection />
                     <HotCollections />
                     <HotBids />

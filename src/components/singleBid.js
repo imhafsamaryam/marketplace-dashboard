@@ -1,16 +1,18 @@
 import { Box, Card, CardMedia, Typography } from '@mui/material'
 import React from 'react'
-import Timer from './timer'
-import BidDetails from './bidDetails'
-import CustomButton from './customButton'
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import SailingIcon from '@mui/icons-material/Sailing';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import SettingsIcon from '@mui/icons-material/Settings';
+import bidsDefault from "../data/bidsSports.json"
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import UserCard from './userCard'
+import { useSelector } from 'react-redux'
+import BidData from './bidData';
+
+const defaultBid = bidsDefault[0]
 
 const SingleBid = () => {
+
+    const userName = useSelector((state) => state.profile.name)
+    const profileImage = useSelector((state) => state.profile.profileImg)
+    const selectedBid = useSelector((state) => state.singleBid.data)
     return (
         <Box>
 
@@ -44,203 +46,16 @@ const SingleBid = () => {
                         99.760 ETH
                     </Typography>
                 </Box>
-                <UserCard avatarImg={"/images/avatar2.webp"} name={"Zacker"} />
+                <UserCard avatarImg={profileImage} name={userName} />
             </Box>
 
-            <Box
-                sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    rowGap: "0.5rem",
-                    bgcolor: "#F5F4FA",
-                    padding: "1rem",
-                    borderRadius: "7px"
-                }}
-            >
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center"
-                    }}
-                >
-                    <UserCard avatarImg={"/images/avatar3.webp"} designation={"Creator"} name={"Charles Wills"} />
-                    <UserCard avatarImg={"/images/avatar4.webp"} designation={"Owner"} name={"Leonel Lee"} />
-                </Box>
-                <Card
-                    elevation={0}
-                    sx={{
-                        width: "94%",
-                        position: "relative",
-                        borderRadius: "7px"
-                    }}
-                >
-                    <CardMedia
-                        sx={{ height: "15rem" }}
-                        image={"/images/bids1.webp"}
-                        title="abstract"
-                    />
-                    <Box
-                        sx={{
-                            position: "absolute",
-                            left: 0,
-                            right: 0,
-                            top: 0,
-                            bottom: 0,
-                            margin: "auto"
-                        }}
+            {
+                selectedBid.name ?
+                    <BidData name={selectedBid.name} avatarImg={selectedBid.avatarImg} avatarName={selectedBid.avatarName} bgImage={selectedBid.bgImage} />
+                    :
+                    <BidData name={defaultBid.name} avatarImg={defaultBid.avatarImg} avatarName={defaultBid.avatarName} bgImage={defaultBid.bgImage} />
+            }
 
-                    >
-                        <Box
-                            sx={{
-                                display: "flex",
-                                flexDirection: "row",
-                                justifyContent: "space-between",
-                                padding: "1rem"
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    backgroundColor: "rgba(0,0,0,0.5)",
-                                    height: "2.5rem",
-                                    width: "2.5rem",
-                                    borderRadius: "4px"
-                                }}
-                            >
-                                <SailingIcon
-                                    color='action'
-
-                                    sx={{
-                                        width: "100%",
-                                        fontSize: 36,
-                                        padding: "0.4rem",
-                                    }}
-                                />
-                            </Box>
-                            <Box
-                                sx={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    rowGap: "0.8rem",
-                                }}
-                            >
-                                <Box
-                                    sx={{
-                                        backgroundColor: "rgba(0,0,0,0.5)",
-                                        height: "2.5rem",
-                                        width: "2.5rem",
-                                        borderRadius: "4px"
-                                    }}
-                                >
-                                    <FavoriteIcon
-                                        color='action'
-
-                                        sx={{
-                                            width: "100%",
-                                            fontSize: 36,
-                                            padding: "0.4rem",
-                                        }}
-                                    />
-                                </Box>
-                                <Box
-                                    sx={{
-                                        backgroundColor: "rgba(0,0,0,0.5)",
-                                        height: "2.5rem",
-                                        width: "2.5rem",
-                                        borderRadius: "4px"
-                                    }}
-                                >
-                                    <ShoppingBagIcon
-                                        color='action'
-
-                                        sx={{
-                                            width: "100%",
-                                            fontSize: 36,
-                                            padding: "0.4rem",
-                                        }}
-                                    />
-                                </Box>
-                                <Box
-                                    sx={{
-                                        backgroundColor: "rgba(0,0,0,0.5)",
-                                        height: "2.5rem",
-                                        width: "2.5rem",
-                                        borderRadius: "4px"
-                                    }}
-                                >
-                                    <SettingsIcon
-                                        color='action'
-
-                                        sx={{
-                                            width: "100%",
-                                            fontSize: 36,
-                                            padding: "0.4rem",
-                                        }}
-                                    />
-                                </Box>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Card>
-                <Typography
-                    fontSize={"20px"}
-                    fontWeight={500}
-                    fontFamily={"Audiowide"}
-                >
-                    Blue and Orange Abstract
-                </Typography>
-            </Box >
-            <Box
-                sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    rowGap: "0.5rem"
-                }}
-            >
-                <BidDetails gap={"1rem"} mainbg={"transparent"} display={"none"} mainColor={"#000000"} secondColor={"#9D9C9F"} bgCol={"#F5F4FA"} >
-                    <Timer
-                        initialHours={18}
-                        initialMinutes={24}
-                        initialSeconds={1}
-                        fontsize={"20px"}
-                        color={"#000000"}
-                    />
-                </BidDetails>
-                <Typography
-                    fontSize={"14px"}
-                    color={"#9D9C9F"}
-                    textAlign={"justify"}
-                >
-                    Blue and pink abstracts is one of the abstract objects created by James Will. This abstract belongs to art gallery, and this abstract was published on August 12, 2020
-                </Typography>
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        columnGap: "1rem",
-                        paddingY: "0.5rem"
-                    }}
-                >
-                    <CustomButton
-                        fontsize={"13px"}
-                        px={"1.8rem"}
-                        py={"0.8rem"}
-                        text={"View artwork"}
-                        color={"secondary"}
-                        elevation={true}
-                        border={"2px solid #9D9C9F"}
-                    />
-                    <CustomButton
-                        fontsize={"13px"}
-                        px={"1.8rem"}
-                        py={"0.8rem"}
-                        text={"Place a Bid"}
-                        color={"primary"}
-                    />
-
-                </Box>
-            </Box>
         </Box >
     )
 }

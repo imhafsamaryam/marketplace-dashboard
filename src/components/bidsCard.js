@@ -4,8 +4,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { setData } from '../slices/singleBidSlice';
 
-export default function BidsCard({ name, items, bgImage, avatarImg, avatarName, endsIn, currentBid, idKey }) {
+export default function BidsCard({ name, items, bgImage, avatarImg, avatarName, endsIn, currentBid, idKey, data }) {
+    const dispatch = useDispatch()
+
     return (
         <Card
             elevation={0}
@@ -16,6 +20,7 @@ export default function BidsCard({ name, items, bgImage, avatarImg, avatarName, 
                 border: "2px solid #E7E6EB"
             }}
             key={idKey}
+            onClick={() => dispatch(setData(data))}
         >
             <CardMedia
                 sx={{ height: "12rem" }}
