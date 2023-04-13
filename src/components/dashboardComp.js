@@ -1,16 +1,25 @@
-import { Box } from '@mui/material'
-import React from 'react'
+import { Box, FormControl, MenuItem, Select } from '@mui/material'
+import React, { useState } from 'react'
 
 
 import HotBids from './hotBids'
 import HotCollections from './hotCollections'
 import HeroSection from './heroSection'
 import SingleBid from './singleBid'
+import CustomSelect from './customSelect'
+
+const options = [
+    { label: 'Zacker', value: 'zacker' },
+    { label: 'Richard', value: 'richard' },
+    { label: 'Charles Will', value: 'charleswill' },
+];
 
 
 
 const DashboardComp = () => {
 
+
+    const [selectedOption, setSelectedOption] = useState('zacker');
 
     return (
         <Box
@@ -22,8 +31,10 @@ const DashboardComp = () => {
             <Box
                 sx={{
                     display: "flex",
-                    flexDirection: { xs: "column", md: "row" },
-                    columnGap: "1.8rem"
+                    flexDirection: { xs: "column-reverse", md: "row" },
+                    columnGap: "1.8rem",
+                    rowGap: "1.8rem"
+
                 }}
             >
                 <Box
@@ -31,9 +42,17 @@ const DashboardComp = () => {
                         display: "flex",
                         flexDirection: "column",
                         rowGap: "1.5rem",
-                        width: "70%"
+                        width: { xs: "100%", lg: "70%" }
                     }}
                 >
+
+                    <CustomSelect
+                        options={options}
+                        label="Select an option"
+                        value={selectedOption}
+                        onChange={(e) => setSelectedOption(e.target.value)}
+                    />
+                
                     <HeroSection />
                     <HotCollections />
                     <HotBids />
@@ -43,7 +62,7 @@ const DashboardComp = () => {
                         display: "flex",
                         flexDirection: "column",
                         rowGap: "1.5rem",
-                        width: "30%"
+                        width: { xs: "100%", lg: "30%" }
                     }}
                 >
                     <SingleBid />

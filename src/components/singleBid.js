@@ -44,7 +44,7 @@ const SingleBid = () => {
                         99.760 ETH
                     </Typography>
                 </Box>
-                <UserCard avatarImg={"/images/avatar2.jpg"} name={"Zacker"} />
+                <UserCard avatarImg={"/images/avatar2.webp"} name={"Zacker"} />
             </Box>
 
             <Box
@@ -65,8 +65,8 @@ const SingleBid = () => {
                         alignItems: "center"
                     }}
                 >
-                    <UserCard avatarImg={"/images/avatar3.jpg"} designation={"Creator"} name={"Charles Wills"} />
-                    <UserCard avatarImg={"/images/avatar4.jpg"} designation={"Owner"} name={"Leonel Lee"} />
+                    <UserCard avatarImg={"/images/avatar3.webp"} designation={"Creator"} name={"Charles Wills"} />
+                    <UserCard avatarImg={"/images/avatar4.webp"} designation={"Owner"} name={"Leonel Lee"} />
                 </Box>
                 <Card
                     elevation={0}
@@ -78,7 +78,7 @@ const SingleBid = () => {
                 >
                     <CardMedia
                         sx={{ height: "15rem" }}
-                        image={"/images/bids1.jpg"}
+                        image={"/images/bids1.webp"}
                         title="abstract"
                     />
                     <Box

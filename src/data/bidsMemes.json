@@ -1,28 +1,28 @@
 [
   {
-    "bgImage": "/images/bids3.jpg",
+    "bgImage": "/images/bids3.webp",
     "endsIn": "2",
     "currentBid": "1.25",
     "name": "Memes",
-    "avatarImg": "/images/avatar1.jpg",
+    "avatarImg": "/images/avatar1.webp",
     "avatarName": "SoDead",
     "items": "4,148"
   },
   {
-    "bgImage": "/images/bids1.jpg",
+    "bgImage": "/images/bids1.webp",
     "endsIn": "2",
     "currentBid": "1.25",
     "name": "Memes",
-    "avatarImg": "/images/avatar1.jpg",
+    "avatarImg": "/images/avatar1.webp",
     "avatarName": "SoDead",
     "items": "4,148"
   },
   {
-    "bgImage": "/images/bids2.jpg",
+    "bgImage": "/images/bids2.webp",
     "endsIn": "2",
     "currentBid": "1.25",
     "name": "Memes",
-    "avatarImg": "/images/avatar1.jpg",
+    "avatarImg": "/images/avatar1.webp",
     "avatarName": "SoDead",
     "items": "4,148"
   }

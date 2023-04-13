@@ -6,7 +6,7 @@ const ComingSoon = () => {
         <Box
             sx={{
                 display: "flex",
-                // backgroundImage: "url('/images/bids1.jpg')",
+                // backgroundImage: "url('/images/bids1.webp')",
                 // objectFit:"cover",
                 // backgroundSize: "cover",
                 // backgroundRepeat: "no-repeat",

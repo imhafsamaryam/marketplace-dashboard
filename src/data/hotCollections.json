@@ -1,37 +1,37 @@
 [
   {
-    "bgImage": "/images/nft.jpg",
-    "avatarImg": "/images/avatar2.jpg",
+    "bgImage": "/images/nft.webp",
+    "avatarImg": "/images/avatar2.webp",
     "name": "AvatarName",
     "items": "23"
   },
   {
-    "bgImage": "/images/collection.jpg",
-    "avatarImg": "/images/avatar3.jpg",
+    "bgImage": "/images/collection.webp",
+    "avatarImg": "/images/avatar3.webp",
     "name": "AvatarName",
     "items": "12"
   },
   {
-    "bgImage": "/images/bids1.jpg",
-    "avatarImg": "/images/avatar4.jpg",
+    "bgImage": "/images/bids1.webp",
+    "avatarImg": "/images/avatar4.webp",
     "name": "AvatarName",
     "items": "44"
   },
   {
-    "bgImage": "/images/bids2.jpg",
-    "avatarImg": "/images/avatar2.jpg",
+    "bgImage": "/images/bids2.webp",
+    "avatarImg": "/images/avatar2.webp",
     "name": "AvatarName",
     "items": "34"
   },
   {
-    "bgImage": "/images/bids3.jpg",
-    "avatarImg": "/images/avatar3.jpg",
+    "bgImage": "/images/bids3.webp",
+    "avatarImg": "/images/avatar3.webp",
     "name": "AvatarName",
     "items": "34"
   },
   {
-    "bgImage": "/images/abstract.jpg",
-    "avatarImg": "/images/avatar4.jpg",
+    "bgImage": "/images/abstract.webp",
+    "avatarImg": "/images/avatar4.webp",
     "name": "AvatarName",
     "items": "34"
   }

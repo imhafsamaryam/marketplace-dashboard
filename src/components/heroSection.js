@@ -16,7 +16,7 @@ const HeroSection = () => {
         >
             <CardMedia
                 sx={{ height: "20rem", width: "100%" }}
-                image={"/images/2.jpg"}
+                image={"/images/2.webp"}
                 title="abstract"
             />
             <Box

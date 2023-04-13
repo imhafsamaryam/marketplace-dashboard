@@ -16,9 +16,14 @@ const theme = createTheme({
             main: '#8F989F',
             // dark: will be calculated from palette.secondary.main,
         },
-      
-
+        background: {
+            paper: "#EAECF5"
+        },
     },
+    shape: {
+        borderRadius: "16px"
+    },
+
 });
 
 export default theme
