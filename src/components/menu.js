@@ -24,13 +24,12 @@ const Menu = ({ handleFn, value }) => {
                     height: "4rem",
                     position: "absolute",
                     left: 0,
-                    borderTopRightRadius: "full",
-                    borderBottomRightRadius: "full",
+                    borderTopRightRadius: "25px",
+                    borderBottomRightRadius: "25px",
                 }
             }}
             sx={{
                 width: "6.2vw",
-                height: "100vh",
                 bgcolor: "#EAECF5",
                 paddingY: "4rem"
             }}

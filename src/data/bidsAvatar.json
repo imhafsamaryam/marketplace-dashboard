@@ -1,0 +1,30 @@
+[
+    {
+      "bgImage": "/images/bids1.jpg",
+      "endsIn": "2",
+      "currentBid": "1.25",
+      "name": "Avatar",
+      "avatarImg": "/images/avatar1.jpg",
+      "avatarName": "SoDead",
+      "items": "4,148"
+    },
+    {
+      "bgImage": "/images/collection.jpg",
+      "endsIn": "2",
+      "currentBid": "1.25",
+      "name": "Avatar",
+      "avatarImg": "/images/avatar1.jpg",
+      "avatarName": "SoDead",
+      "items": "4,148"
+    },
+    {
+      "bgImage": "/images/nft.jpg",
+      "endsIn": "2",
+      "currentBid": "1.25",
+      "name": "Avatar",
+      "avatarImg": "/images/avatar1.jpg",
+      "avatarName": "SoDead",
+      "items": "4,148"
+    }
+  ]
+  

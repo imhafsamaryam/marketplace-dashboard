@@ -1,6 +1,5 @@
-import { Box } from "@mui/material";
 import Dashboard from "./dashboard";
-
+import "./styles/font/stylesheet.css"
 
 function App() {
   return (

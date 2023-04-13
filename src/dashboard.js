@@ -17,7 +17,9 @@ export default function Dashboard() {
 
         <Box
             sx={{
-                display: "flex"
+                display: "flex",
+                flexDirection:"row",
+                width:"100%"
             }}
         >
             <Menu value={value} handleFn={handleChange} />

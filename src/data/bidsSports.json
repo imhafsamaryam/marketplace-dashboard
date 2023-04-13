@@ -1,0 +1,29 @@
+[
+  {
+    "bgImage": "/images/abstract.jpg",
+    "endsIn": "2",
+    "currentBid": "1.25",
+    "name": "Skateboarding",
+    "avatarImg": "/images/avatar2.jpg",
+    "avatarName": "SoDead",
+    "items": "4,148"
+  },
+  {
+    "bgImage": "/images/bids2.jpg",
+    "endsIn": "2",
+    "currentBid": "1.25",
+    "name": "Skateboarding",
+    "avatarImg": "/images/avatar3.jpg",
+    "avatarName": "SoDead",
+    "items": "4,148"
+  },
+  {
+    "bgImage": "/images/nft.jpg",
+    "endsIn": "2",
+    "currentBid": "1.25",
+    "name": "Skateboarding",
+    "avatarImg": "/images/avatar4.jpg",
+    "avatarName": "SoDead",
+    "items": "4,148"
+  }
+]

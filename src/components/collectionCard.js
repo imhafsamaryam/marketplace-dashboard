@@ -11,7 +11,7 @@ export default function CollectionCard({ name, items, bgImage, avatarImg }) {
             sx={{
                 width: 215,
                 position: "relative",
-                
+                borderRadius:"7px"
             }}
         >
             <CardMedia
@@ -38,8 +38,7 @@ export default function CollectionCard({ name, items, bgImage, avatarImg }) {
             <CardContent
                 sx={{
                     height: "4rem",
-                    paddingY: "10px",
-                    "&.MuiCardContent-root": { paddingBottom: "10px" },
+                    "&.MuiCardContent-root": { padding: "8px" },
                     bgcolor: "#EAECF5",
                     display: "flex",
                     flexDirection: "row",
@@ -55,7 +54,7 @@ export default function CollectionCard({ name, items, bgImage, avatarImg }) {
                 </Typography>
                 <Typography
                     fontSize={"12px"}
-                    color={"#BFC1C5"}
+                    color={"#B7B7BA"}
                 >
                     {items} items
                 </Typography>

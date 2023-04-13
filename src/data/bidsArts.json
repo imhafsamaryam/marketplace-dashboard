@@ -1,0 +1,29 @@
+[
+  {
+    "bgImage": "/images/bids3.jpg",
+    "endsIn": "2",
+    "currentBid": "1.25",
+    "name": "Arts",
+    "avatarImg": "/images/avatar1.jpg",
+    "avatarName": "SoDead",
+    "items": "4,148"
+  },
+  {
+    "bgImage": "/images/bids1.jpg",
+    "endsIn": "2",
+    "currentBid": "1.25",
+    "name": "Arts",
+    "avatarImg": "/images/avatar1.jpg",
+    "avatarName": "SoDead",
+    "items": "4,148"
+  },
+  {
+    "bgImage": "/images/bids2.jpg",
+    "endsIn": "2",
+    "currentBid": "1.25",
+    "name": "Arts",
+    "avatarImg": "/images/avatar1.jpg",
+    "avatarName": "SoDead",
+    "items": "4,148"
+  }
+]

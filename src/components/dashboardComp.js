@@ -1,46 +1,28 @@
-import { Box, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import React from 'react'
-import CollectionCard from './collectionCard'
 
-const collectionCardsData = [
-    {
-        bgImage: "/images/nft.jpg",
-        avatarImg: "/images/avatar2.jpg",
-        name: "AvatarName",
-        items: "23"
-    },
-    {
-        bgImage: "/images/nft.jpg",
-        avatarImg: "/images/avatar2.jpg",
-        name: "AvatarName",
-        items: "12"
-    },
-    {
-        bgImage: "/images/nft.jpg",
-        avatarImg: "/images/avatar2.jpg",
-        name: "AvatarName",
-        items: "44"
-    },
-    {
-        bgImage: "/images/nft.jpg",
-        avatarImg: "/images/avatar2.jpg",
-        name: "AvatarName",
-        items: "34"
-    },
 
-]
+import HotBids from './hotBids'
+import HotCollections from './hotCollections'
+import HeroSection from './heroSection'
+import SingleBid from './singleBid'
+
+
 
 const DashboardComp = () => {
+
+
     return (
         <Box
             sx={{
-                padding: "1.8rem"
+                padding: "1.8rem",
+                width: "93vw"
             }}
         >
             <Box
                 sx={{
                     display: "flex",
-                    flexDirection: "row",
+                    flexDirection: { xs: "column", md: "row" },
                     columnGap: "1.8rem"
                 }}
             >
@@ -48,79 +30,23 @@ const DashboardComp = () => {
                     sx={{
                         display: "flex",
                         flexDirection: "column",
-                        rowGap: "0.8rem"
+                        rowGap: "1.5rem",
+                        width: "70%"
                     }}
                 >
-
-                    <Box
-                        sx={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center"
-                        }}
-                    >
-                        <Typography
-                            fontSize={"24px"}
-                            fontWeight={600}
-                        >
-                            Hot Collections
-                        </Typography>
-                        <Typography
-                            fontSize={"14px"}
-                            fontWeight={500}
-                            color={"#BFC1C5"}
-                        >
-                            View All
-                        </Typography>
-                    </Box>
-                    <Box
-                        sx={{
-                            display: "flex",
-                            flexDirection: "row",
-                            gap: "0.6rem"
-                        }}
-                    >
-                        {collectionCardsData.map((data, index) => {
-                            return (
-                                <Box
-
-                                >
-                                    <CollectionCard
-                                        name={data.name}
-                                        items={data.items}
-                                        bgImage={data.bgImage}
-                                        avatarImg={data.avatarImg}
-                                    />
-                                </Box>
-
-                            )
-
-                        })}
-                    </Box>
-                    <Box
-                        sx={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center"
-                        }}
-                    >
-                        <Typography
-                            fontSize={"24px"}
-                            fontWeight={600}
-                        >
-                            Hot Bids
-                        </Typography>
-                        <Typography
-                            fontSize={"14px"}
-                            fontWeight={500}
-                            color={"#BFC1C5"}
-                        >
-                            View All
-                        </Typography>
-                    </Box>
+                    <HeroSection />
+                    <HotCollections />
+                    <HotBids />
                 </Box>
-                <Box>
-                    column
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        rowGap: "1.5rem",
+                        width: "30%"
+                    }}
+                >
+                    <SingleBid />
                 </Box>
             </Box>
         </Box>
