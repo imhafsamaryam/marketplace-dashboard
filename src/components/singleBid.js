@@ -12,6 +12,7 @@ const SingleBid = () => {
 
     const userName = useSelector((state) => state.profile.name)
     const profileImage = useSelector((state) => state.profile.profileImg)
+    const designationData = useSelector((state) => state.designation.designation)
     const selectedBid = useSelector((state) => state.singleBid.data)
     return (
         <Box>
@@ -46,7 +47,7 @@ const SingleBid = () => {
                         99.760 ETH
                     </Typography>
                 </Box>
-                <UserCard avatarImg={profileImage} name={userName} />
+                <UserCard avatarImg={profileImage} name={userName} designation={designationData} />
             </Box>
 
             {

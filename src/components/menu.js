@@ -6,6 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import SailingIcon from '@mui/icons-material/Sailing';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import SettingsIcon from '@mui/icons-material/Settings';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const Menu = ({ handleFn, value }) => {
@@ -31,7 +32,7 @@ const Menu = ({ handleFn, value }) => {
             sx={{
                 width: "6.2vw",
                 bgcolor: "#EAECF5",
-                paddingY: "4rem",
+                paddingY: "2rem",
                 position:"fixed",
                 top:0,
                 left:0,
@@ -106,6 +107,20 @@ const Menu = ({ handleFn, value }) => {
                     color: "#A2A2AE"
                 }}
                 icon={<SettingsIcon />}
+                aria-label="settings"
+                disableRipple
+            />
+            <Tab
+                sx={{
+                    height: "4rem",
+                    "&.Mui-selected": {
+                        bgcolor: "#DEE3F9",
+                        color: "#525EF7"
+                    },
+                    marginY: "1rem",
+                    color: "#A2A2AE"
+                }}
+                icon={<AccountBalanceWalletIcon />}
                 aria-label="settings"
                 disableRipple
             />

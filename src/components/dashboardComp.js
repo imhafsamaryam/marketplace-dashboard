@@ -1,4 +1,4 @@
-import { Box, FormControl, MenuItem, Select } from '@mui/material'
+import { Box, FormControl, Input, MenuItem, Select } from '@mui/material'
 import React, { useState } from 'react'
 
 
@@ -9,6 +9,7 @@ import SingleBid from './singleBid'
 import CustomSelect from './customSelect'
 import { useDispatch, useSelector } from 'react-redux'
 import { setName, setProfileImg } from '../slices/profileSlice'
+import { setDesignation } from '../slices/designationSlice'
 
 const options = [
     { label: 'Zacker', value: 'Zacker' },
@@ -21,6 +22,7 @@ const options = [
 const DashboardComp = () => {
 
     const name = useSelector((state) => state.profile.name)
+    const designation = useSelector((state) => state.designation.designation)
     const dispatch = useDispatch()
 
     return (
@@ -48,28 +50,42 @@ const DashboardComp = () => {
                     }}
                 >
 
-                    <CustomSelect
-                        options={options}
-                        label="Select an option"
-                        value={name}
-                        onChange={(e) => {
-                            dispatch(setName(e.target.value))
-                            switch (e.target.value) {
-                                case "Zacker":
-                                    dispatch(setProfileImg("/images/avatar2.webp"))
-                                    break;
-                                case "Richard":
-                                    dispatch(setProfileImg("/images/avatar3.webp"))
-                                    break;
-                                case "Charles Will":
-                                    dispatch(setProfileImg("/images/avatar4.webp"))
-                                    break;
-
-                                default:
-                                    break;
-                            }
+                    <Box
+                        sx={{
+                            display: "flex",
+                            gap: "1rem"
                         }}
-                    />
+                    >
+                        <CustomSelect
+                            options={options}
+                            label="Select an option"
+                            value={name}
+                            onChange={(e) => {
+                                dispatch(setName(e.target.value))
+                                switch (e.target.value) {
+                                    case "Zacker":
+                                        dispatch(setProfileImg("/images/avatar2.webp"))
+                                        break;
+                                    case "Richard":
+                                        dispatch(setProfileImg("/images/avatar3.webp"))
+                                        break;
+                                    case "Charles Will":
+                                        dispatch(setProfileImg("/images/avatar4.webp"))
+                                        break;
+
+                                    default:
+                                        break;
+                                }
+                            }}
+                        />
+                        <Input
+                            value={designation}
+                            placeholder='designation'
+                            onChange={(e) => {
+                                dispatch(setDesignation(e.target.value))
+                            }}
+                        />
+                    </Box>
 
                     <HeroSection />
                     <HotCollections />
