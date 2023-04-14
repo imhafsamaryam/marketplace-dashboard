@@ -15,7 +15,6 @@ const CustomButton = ({ text, color, elevation, handleActive, key, fontsize, px,
             disableRipple
             key={key}
             sx={{
-                display: { xs: "none", md: "inherit" },
                 paddingX: { xs: "0.3rem", lg: px ? px : "1.2rem" },
                 paddingY: { xs: "0.1rem", lg: py ? py : "0.5rem" },
                 fontSize: fontsize ? fontsize : "14px",

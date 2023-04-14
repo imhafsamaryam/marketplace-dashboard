@@ -25,14 +25,16 @@ const HotBids = () => {
             sx={{
                 display: "flex",
                 flexDirection: "column",
-                rowGap: "1rem"
+                rowGap: "1rem",
             }}
         >
             <Box
                 sx={{
                     display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center"
+                    flexDirection: { xs: "column", lg: "row" },
+                    rowGap: "1rem",
+                    justifyContent: { xs: "start", lg: "space-between" },
+                    alignItems: { xs: "start", lg: "center" }
                 }}
             >
                 <Typography
@@ -68,127 +70,187 @@ const HotBids = () => {
                 </Box>
 
             </Box>
-            {
-                active === "Sports" &&
-
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between"
-                    }}
-                >
-                    {bidsSports.map((data, idx) => {
-                        return <BidsCard
-                            data={data}
-                            idKey={idx}
-                            name={data.name}
-                            avatarName={data.avatarName}
-                            items={data.items}
-                            bgImage={data.bgImage}
-                            avatarImg={data.avatarImg}
-                            endsIn={data.endsIn}
-                            currentBid={data.currentBid}
-                        />
-                    })}
-                </Box>
+            <Box
+                sx={{
+                    width: { xs: "100%", lg: "100%" },
+                    maxWidth: "2xl",
+                    overflow: "hidden",
+                }}
+            >
 
 
+                {
+                    active === "Sports" &&
 
-            }
-            {
-                active === "Arts" &&
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between"
-                    }}
-                >
-                    {bidsArts.map((data, idx) => {
-                        return <BidsCard
-                            data={data}
-                            idKey={idx}
-                            name={data.name}
-                            avatarName={data.avatarName}
-                            items={data.items}
-                            bgImage={data.bgImage}
-                            avatarImg={data.avatarImg}
-                            endsIn={data.endsIn}
-                            currentBid={data.currentBid}
-                        />
-                    })}
-                </Box>
-            }
-            {active === "Gaming" &&
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between"
-                    }}
-                >
-                    {bidsGaming.map((data, idx) => {
-                        return <BidsCard
-                            data={data}
-                            idKey={idx}
-                            name={data.name}
-                            avatarName={data.avatarName}
-                            items={data.items}
-                            bgImage={data.bgImage}
-                            avatarImg={data.avatarImg}
-                            endsIn={data.endsIn}
-                            currentBid={data.currentBid}
-                        />
-                    })}
-                </Box>
-            }
-            {active === "Avatar" &&
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between"
-                    }}
-                >
-                    {bidsAvatar.map((data, idx) => {
-                        return <BidsCard
-                            data={data}
-                            idKey={idx}
-                            name={data.name}
-                            avatarName={data.avatarName}
-                            items={data.items}
-                            bgImage={data.bgImage}
-                            avatarImg={data.avatarImg}
-                            endsIn={data.endsIn}
-                            currentBid={data.currentBid}
-                        />
-                    })}
-                </Box>
-            }
-            {active === "Memes" &&
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between"
-                    }}
-                >
-                    {bidsMemes.map((data, idx) => {
-                        return <BidsCard
-                            data={data}
-                            idKey={idx}
-                            name={data.name}
-                            avatarName={data.avatarName}
-                            items={data.items}
-                            bgImage={data.bgImage}
-                            avatarImg={data.avatarImg}
-                            endsIn={data.endsIn}
-                            currentBid={data.currentBid}
-                        />
-                    })}
-                </Box>
-            }
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: { lg: "space-between" },
+                            gap: "1rem",
+                            overflowX: "scroll",
+                            scrollBehavior: "smooth",
+                            "&::-webkit-scrollbar": {
+                                display: "none",
+                            },
+                        }}
+                    >
+                        {bidsSports.map((data, idx) => {
+                            return (
+                                <Box>
+                                    <BidsCard
+                                        data={data}
+                                        idKey={idx}
+                                        name={data.name}
+                                        avatarName={data.avatarName}
+                                        items={data.items}
+                                        bgImage={data.bgImage}
+                                        avatarImg={data.avatarImg}
+                                        endsIn={data.endsIn}
+                                        currentBid={data.currentBid}
+                                    />
+                                </Box>
+                            )
+                        })}
+                    </Box>
+
+
+
+                }
+                {
+                    active === "Arts" &&
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: { lg: "space-between" },
+                            gap: "1rem",
+                            overflowX: "scroll",
+                            scrollBehavior: "smooth",
+                            "&::-webkit-scrollbar": {
+                                display: "none",
+                            },
+                        }}
+                    >
+                        {bidsArts.map((data, idx) => {
+                            return (
+                                <Box>
+                                    <BidsCard
+                                        data={data}
+                                        idKey={idx}
+                                        name={data.name}
+                                        avatarName={data.avatarName}
+                                        items={data.items}
+                                        bgImage={data.bgImage}
+                                        avatarImg={data.avatarImg}
+                                        endsIn={data.endsIn}
+                                        currentBid={data.currentBid}
+                                    />
+                                </Box>
+                            )
+                        })}
+                    </Box>
+                }
+                {active === "Gaming" &&
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: { lg: "space-between" },
+                            gap: "1rem",
+                            overflowX: "scroll",
+                            scrollBehavior: "smooth",
+                            "&::-webkit-scrollbar": {
+                                display: "none",
+                            },
+                        }}
+                    >
+                        {bidsGaming.map((data, idx) => {
+                            return (
+                                <Box>
+                                    <BidsCard
+                                        data={data}
+                                        idKey={idx}
+                                        name={data.name}
+                                        avatarName={data.avatarName}
+                                        items={data.items}
+                                        bgImage={data.bgImage}
+                                        avatarImg={data.avatarImg}
+                                        endsIn={data.endsIn}
+                                        currentBid={data.currentBid}
+                                    />
+                                </Box>
+                            )
+                        })}
+                    </Box>
+                }
+                {active === "Avatar" &&
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: { lg: "space-between" },
+                            gap: "1rem",
+                            overflowX: "scroll",
+                            scrollBehavior: "smooth",
+                            "&::-webkit-scrollbar": {
+                                display: "none",
+                            },
+                        }}
+                    >
+                        {bidsAvatar.map((data, idx) => {
+                            return (
+                                <Box>
+                                    <BidsCard
+                                        data={data}
+                                        idKey={idx}
+                                        name={data.name}
+                                        avatarName={data.avatarName}
+                                        items={data.items}
+                                        bgImage={data.bgImage}
+                                        avatarImg={data.avatarImg}
+                                        endsIn={data.endsIn}
+                                        currentBid={data.currentBid}
+                                    />
+                                </Box>
+                            )
+                        })}
+                    </Box>
+                }
+                {active === "Memes" &&
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: { lg: "space-between" },
+                            gap: "1rem",
+                            overflowX: "scroll",
+                            scrollBehavior: "smooth",
+                            "&::-webkit-scrollbar": {
+                                display: "none",
+                            },
+                        }}
+                    >
+                        {bidsMemes.map((data, idx) => {
+                            return (
+                                <Box>
+                                    <BidsCard
+                                        data={data}
+                                        idKey={idx}
+                                        name={data.name}
+                                        avatarName={data.avatarName}
+                                        items={data.items}
+                                        bgImage={data.bgImage}
+                                        avatarImg={data.avatarImg}
+                                        endsIn={data.endsIn}
+                                        currentBid={data.currentBid}
+                                    />
+                                </Box>
+                            )
+                        })}
+                    </Box>
+                }
+            </Box>
         </Box>
     )
 }

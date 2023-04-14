@@ -27,7 +27,7 @@ const DashboardComp = () => {
         <Box
             sx={{
                 padding: "1.8rem",
-                width: "92vw"
+                width: { xs: "100vw", lg: "92vw" }
             }}
         >
             <Box
